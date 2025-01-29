@@ -18,7 +18,7 @@ sudo -u $user $commande
 
 dans le cas de cette exercice:
 
-'''
+'''bash 
 $ sudo -l
 User app-script-ch1 may run the following commands on challenge02:
     (app-script-ch1-cracked) /bin/cat /challenge/app-script/ch1/notes/*
