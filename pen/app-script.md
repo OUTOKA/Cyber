@@ -54,6 +54,25 @@ And the condition will be split to become:
 $PASS -eq 42 -o 1 -eq 1
 ````
 
+### PERL - Command injection
+
+setuid-wrapper SUID program execute the perl file ch7.pl
+so after reading the perl issue article montioned in this challenge .
+i found in code only The open() function so i focus on it issues here where the solution appear to me
+
+The Perl documentation tells us that:
+
+   If the filename begins with "|", the filename is interpreted as a command to which output is to be piped, and if the filename ends with a "|", the filename is interpreted as a command which pipes output to us.
+so i run
+````
+./setuid-wrapper
+#it run python script as SUID permission
+| /bin/cat ~/.passwd
+````
+et voila
+
+thank you .
+
 Sources
 Split/Glob effect on unquoted variables: https://unix.stackexchange.com/questions/171346/security-implications-of-forgetting-to-quote-a-variable-in-bash-posix-shells#answer-171347;
 OR operation for the test command: https://tldp.org/LDP/abs/html/comparison-ops.html#CCOMPARISON1 .
