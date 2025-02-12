@@ -54,6 +54,11 @@ And the condition will be split to become:
 $PASS -eq 42 -o 1 -eq 1
 ````
 
+Sources
+Split/Glob effect on unquoted variables: https://unix.stackexchange.com/questions/171346/security-implications-of-forgetting-to-quote-a-variable-in-bash-posix-shells#answer-171347;
+OR operation for the test command: https://tldp.org/LDP/abs/html/comparison-ops.html#CCOMPARISON1 .
+
+
 ### PERL - Command injection
 
 setuid-wrapper SUID program execute the perl file ch7.pl
@@ -72,7 +77,3 @@ so i run
 et voila
 
 thank you .
-
-Sources
-Split/Glob effect on unquoted variables: https://unix.stackexchange.com/questions/171346/security-implications-of-forgetting-to-quote-a-variable-in-bash-posix-shells#answer-171347;
-OR operation for the test command: https://tldp.org/LDP/abs/html/comparison-ops.html#CCOMPARISON1 .
